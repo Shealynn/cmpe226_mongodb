@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  div.container
+    div.nav-container
+      ul(class="nav nav-pills")
+        each c,i in categories
+          if c==current
+             li.active
+               a(href="?category=#{c}")  #{c}
+          else
+             li
+               a(href="?category=#{c}")  #{c}
+    each d,i in data
+      table(class="table table-bordered")
+        each v,k in d
+          tr
+           td #{k}
+           td #{v}
+    
+  
+    
